@@ -1,0 +1,15 @@
+Register:
+> curl -X POST http://localhost:3000/api/auth/register -H "Content-Type: application/json" -d '{"username":"sntaks","password":"Asdf1234"}'
+> Returns: User registered successfully
+
+Login:
+> curl -X POST http://localhost:3000/api/auth/login -H "Content-Type: application/json" -d '{"username": "sntaks", "password":"Asdf1234"}'
+> Returns: JWT_TOKEN
+
+Create Journal:
+> curl -X POST http://localhost:3000/api/journals/ -H "Content-Type: application/json" -H "Authorization: Bearer JWT_TOKEN" -d '{"title":"First Entry","content":"This is my first journal entry","category":"Personal","date":"2024-07-01"}'
+> Returns: Journal Entry Created
+
+Get Journals:
+> curl -X GET http://localhost:3000/api/journals/entries -H "Authorization: Bearer JWT_TOKEN"
+> Returns: all journals created by User
