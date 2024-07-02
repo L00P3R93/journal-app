@@ -19,7 +19,7 @@ export const createJournalEntry = async (req: AuthenticatedRequest, res: Respons
             date: new Date(date),
             userId: user.id
         });
-        res.send({ message: "Journal Entry Created", journalEntry })
+        res.status(200).send({ message: "Journal Entry Created", journalEntry })
     } catch (error) {
         res.status(500).send({message: 'Internal Server Error'});
     }
@@ -30,7 +30,7 @@ export const getJournalEntries = async (req: AuthenticatedRequest, res: Response
         const userId = req.userId;
         //Fetch all Journal Entries created by User.
         const entries = await JournalEntry.findAll({ where: { userId } })
-        res.send(entries)
+        res.status(200).send(entries)
     } catch (error) {
         res.status(500).send({message: 'Internal Server Error'});
     }

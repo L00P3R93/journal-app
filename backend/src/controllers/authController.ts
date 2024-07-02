@@ -16,7 +16,7 @@ export const register = async (req: Request, res: Response) => {
 
         //Create New User
         const user = await User.create({ username, password: hashedPassword });
-        res.send({ message: "User registered Successfully", user });
+        res.status(200).send({ message: "User registered Successfully", user });
     } catch (error) {
         res.status(500).send({ message: "Internal Server Error: ", error })
     }
@@ -36,7 +36,7 @@ export const login = async (req: Request, res: Response) => {
 
         //Generate JWT Token
         const token = jwt.sign({ userId: user.id }, 'sntaks@5876', { expiresIn: '1h' });
-        res.send({ token })
+        res.status(200).send({ token })
     } catch (error) {
         res.status(500).send({ message: "Internal Server Error" })
     }
