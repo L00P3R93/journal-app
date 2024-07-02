@@ -1,0 +1,27 @@
+{
+	"name": "journal-backend",
+	"version": "1.0.0",
+	"main": "src/index.ts",
+	"scripts": {
+		"start": "nodemon src/index.ts"
+	},
+	"keywords": [],
+	"author": "sntaks",
+	"license": "MIT",
+	"description": "Back-end for the journal app",
+	"dependencies": {
+		"axios": "^0.21.1",
+		"bcryptjs": "^2.4.3",
+		"body-parser": "^1.19.0",
+		"express": "^4.17.1",
+		"jsonwebtoken": "^8.5.1",
+		"pg": "^8.6.0",
+		"reflect-metadata": "^0.1.13",
+		"typeorm": "^0.2.32"
+	},
+	"devDependencies": {
+		"nodemon": "^2.0.7",
+		"ts-node": "^9.1.1",
+		"typescript": "^4.1.3"
+	}
+}
