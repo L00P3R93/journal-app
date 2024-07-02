@@ -1,9 +1,9 @@
 {
 	"name": "journal-backend",
 	"version": "1.0.0",
-	"main": "src/index.ts",
+	"main": "src/server.ts",
 	"scripts": {
-		"start": "nodemon src/index.ts"
+		"start": "nodemon src/server.ts"
 	},
 	"keywords": [],
 	"author": "sntaks",
